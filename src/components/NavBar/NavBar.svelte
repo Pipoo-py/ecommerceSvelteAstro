@@ -91,7 +91,7 @@
                   bind:badge={carStore.savedProducts.length}
                 />
               </button>
-              {#if isViewingCar}
+              {#if isViewingCar && carStore.savedProducts.length > 0}
                 <div
                   class="results-container"
                   transition:fly={{ duration: 200, y: -30 }}
@@ -130,7 +130,7 @@
                 bind:badge={carStore.savedProducts.length}
               />
             </button>
-            {#if isViewingCar}
+            {#if isViewingCar && carStore.savedProducts.length > 0}
               <div
                 class="results-container"
                 transition:fly={{ duration: 200, y: -30 }}
@@ -234,7 +234,8 @@
   .results-container {
     position: absolute;
     top: calc(100% + 10px);
-    right: 0;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: #fff;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
