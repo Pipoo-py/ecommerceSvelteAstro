@@ -1,0 +1,16 @@
+---
+import Layout from "../layouts/Layout.astro"
+import GridProducts from "../components/GridProducts/GridProducts.svelte"
+---
+
+<Layout title="Productos - iZhop">
+  <h1>Todos nuestro productos</h1>
+  <GridProducts client:load/>
+</Layout>
+
+<style>
+  h1{
+    margin-top: 8rem;
+    text-align: center;
+  }
+</style>

@@ -1,0 +1,71 @@
+---
+import Categorie from "./Categorie.astro";
+
+const productsForCat = new Map();
+
+const fetchProducts = async()=>{
+  try{
+    let request = await fetch("https://dummyjson.com/products");
+    let data = await request.json();
+    return data.products;
+  }catch(err){
+    console.log(err);
+    return err
+  }
+}
+
+const products = await fetchProducts();
+products.forEach(product=>{
+  productsForCat.set(product.category,{
+    category: product.category,
+    image: product.images[0]
+  })
+  })
+
+  const productsFiltered = Array.from(productsForCat.values())
+---
+
+<div class="cat-section-container">
+  <section class="cat-section">
+    <h3>Explora por categorias</h3>
+    <p>Encuentra exactamente lo que quieras</p>
+    <div class="categories-container">
+    {
+      productsFiltered.map(product=>(
+        <Categorie categorie={product}/>
+      ))
+      }
+      </div>
+  </section>
+</div>
+
+<style>
+  .cat-section-container{
+    background-color: var(--bg-primary);
+    padding: 24px 0;
+  }
+  .cat-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .3rem;
+    padding: 12px 24px;
+  }
+
+  .cat-section h3{
+    font-size: clamp(1.5rem, 5dvw, 2rem);
+    font-weight: bold;
+  }
+
+  .categories-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+  }
+
+  body.true .cat-section-container{
+    background-color: var(--dark-bg-primary);
+  }
+</style>

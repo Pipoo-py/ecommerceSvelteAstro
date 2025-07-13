@@ -1,0 +1,119 @@
+---
+import { Image } from "astro:assets"
+import welcomeImage from "../../assets/welcome.webp"
+---
+
+<div class="welcome-container">
+<section class="welcome-section">
+  <div class="welcome-description-container">
+    <h2 class="welcome-h2">Descubre los productos más innovadores</h2>
+    <p>Los mejores productos con la calidad que mereces y precios increíbles.</p>
+    <div class="welcome-buttons-container">
+      <button><a href="/products">Explorar productos</a></button>
+      <button><a href="/offerts">Ver ofertas</a></button>
+    </div>
+  </div>
+  <div class="welcome-img-container">
+    <Image alt="Imagen de referencia" src={welcomeImage} class="welcome-img"/>
+  </div>
+</section>
+</div>
+
+<style>
+  .welcome-container{
+    container-name: welcome;
+    container-type: inline-size;
+  }
+  .welcome-section{
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+    padding: 24px;
+    flex-wrap: wrap;
+    gap: 3rem;
+    background-color: var(--bg-secondary);
+    margin-top: 5rem;
+  }
+  .welcome-img-container{
+    width: 800px;
+    height: fit-content;
+    overflow: hidden;
+  }
+  .welcome-img{
+    object-fit: cover;
+    object-position: ;
+    width: 100%;
+    border-radius: 16px;
+  }
+
+  .welcome-h2{
+    max-width: 400px;
+    font-size: clamp(2rem, 5dvw, 3rem);
+    font-weight: bold;
+  }
+
+  .welcome-description-container p {
+    max-width: 400px;
+    color: var(--text-secondary);
+    font-size: clamp(1rem, 5dvw, 1.5rem);
+  }
+  .welcome-buttons-container{
+    display: flex;
+    gap: 1rem;
+  }
+  .welcome-buttons-container button{
+    background-color: transparent;
+    padding: 12px 36px;
+    border-radius: 8px;
+    border: none;
+  }
+  .welcome-buttons-container button:first-child{
+    background-color: var(--color-primary);
+  }
+  .welcome-buttons-container button:last-child{
+    border: 1px solid var(--border);
+  }
+
+  .welcome-buttons-container button a{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: clamp(1rem, 50dvw, 1.2rem);
+    letter-spacing: .5;
+  }
+
+  .welcome-buttons-container button:first-child a{
+    color: #ffff;
+  }
+  .welcome-buttons-container button:last-child a{
+    color: var(--color-secondary);
+  }
+
+  body.true .welcome-section{
+    background-color: var(--dark-bg-secondary);
+  }
+  body.true .welcome-description-container p{
+    color: var(--dark-text-secondary);
+  }
+  body.true .welcome-buttons-container button:first-child{
+    background-color: var(--dark-primary);
+  }
+  body.true .welcome-buttons-container button:last-child{
+    color: var(--dark-color-secondary);
+  }
+
+  @container welcome (max-width: 700px){
+    .welcome-section{
+      margin-top: 3rem;
+    }
+    .welcome-img{
+      height: 400px;
+      width: 100%;
+    }
+    .welcome-buttons-container button{
+      padding: 8px 24px;
+    }
+    .welcome-buttons-container button a{
+      font-size: 1rem;
+    }
+  }
+</style>

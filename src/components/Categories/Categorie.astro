@@ -1,0 +1,43 @@
+---
+const { categorie } = Astro.props;
+const capitalized = categorie.category.charAt(0).toUpperCase() + categorie.category.slice(1);
+---
+
+<div class="cat-container">
+  <div class="cat-container-img">
+    <img alt={categorie.category} src={categorie.image}/>
+  </div>
+  <h4>{capitalized}</h4>
+</div>
+
+<style>
+  .cat-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-secondary);
+    padding: 14px;
+    border-radius: 12px;
+    box-shadow: 0 0 18px #6663;
+  }
+  .cat-container-img{
+    background-color: var(--bg-primary);
+    border-radius: 12px;
+  }
+  .cat-container-img img{
+    width: 100%;
+    transition: transform .3s;
+  }
+  .cat-container-img img:hover{
+    transform: scale(1.08);
+  }
+
+  body.true .cat-container{
+    background-color: var(--dark-bg-secondary);
+    box-shadow: 0 0 18px #000a;
+  }
+  body.true .cat-container-img{
+    background-color: var(--dark-bg-primary);
+  }
+</style>

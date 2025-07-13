@@ -1,0 +1,54 @@
+---
+import Product from "../Product/Product.svelte"
+const fetchProducts = async()=>{
+  try{
+    let request = await fetch("https://dummyjson.com/products");
+    let data = await request.json();
+    return data.products;
+  }catch(err){
+    console.log(err);
+    return err
+  }
+  }
+
+  const products = await fetchProducts();
+  const betterProducts = products.filter(product=> product.rating >= 4);
+---
+
+<div class="best-seller-container">
+  <section class="best-seller-section">
+    <h3>Productos destacados</h3>
+    <p>Los mejor valorados</p>
+    <div class="products-container">
+      {
+        betterProducts.map(product=>(
+        <Product productInfo={product} client:load/>
+        ))
+      }
+    </div>
+  </section>
+</div>
+
+<style>
+  .best-seller-section{
+    background-color: var(--bg-secondary);
+    padding: 24px;
+  }
+  .best-seller-section h3{
+    font-size: clamp(1.5rem, 5dvw, 2rem);
+    text-align: center;
+  }
+  .best-seller-section p{
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .products-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+  }
+  body.true .best-seller-section{
+    background-color: var(--dark-bg-secondary);
+  }
+</style>
