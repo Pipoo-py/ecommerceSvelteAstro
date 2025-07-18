@@ -1,47 +1,45 @@
-# Astro Starter Kit: Minimal
+# E-commerce UI Showcase (Astro + Svelte)
 
-```sh
-bun create astro@latest -- --template minimal
-```
+Una maqueta de E-commerce no funcional, creada para demostrar habilidades avanzadas de maquetación, diseño responsivo y arquitectura de componentes con un enfoque en el máximo rendimiento.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+**[➡️ Ver Demo en Vivo](https://izhop.netlify.app/)**
+---
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+### 🇬🇧 About This Project
 
-## 🚀 Project Structure
+This project is a front-end mockup of a modern e-commerce site. It is **not a functional application**; its purpose is to serve as a high-quality demonstration of my UI/UX and front-end development skills. The focus was on creating a pixel-perfect, responsive, and extremely fast user interface.
 
-Inside of your Astro project, you'll see the following folders and files:
+#### ✨ Features
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+* **Product Grid & Detail Pages:** Clean and modern layouts for Browse and viewing products.
+* **Interactive UI Elements:** Client-side interactivity built with Svelte for a snappy feel (e.g., image carousels, quantity selectors).
+* **100% Responsive Design:** Meticulously crafted to adapt to all screen sizes, from mobile to 4K displays.
+* **Optimized for Performance:** Built to load instantly and run smoothly.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+#### 🛠️ Tech Stack & Philosophy
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+<p>
+  <img alt="Astro" src="https://img.shields.io/badge/Astro-FF5D01?style=for-the-badge&logo=astro&logoColor=white"/>
+  <img alt="Svelte" src="https://img.shields.io/badge/Svelte-FF3E00?style=for-the-badge&logo=svelte&logoColor=white"/>
+  <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-007ACC?style=for-the-badge&logo=javascript&logoColor=white"/>
+</p>
 
-Any static assets, like images, can be placed in the `public/` directory.
+Why **Astro + Svelte**? To prove that a complex user interface doesn't have to be slow. Astro handles the static site generation for instant page loads, while Svelte components provide interactivity. Svelte compiles to highly efficient, imperative code that manipulates the DOM directly, avoiding the overhead of a Virtual DOM. This combination is perfect for building interfaces that feel lightweight and instantaneous.
 
-## 🧞 Commands
 
-All commands are run from the root of the project, from a terminal:
+### 🇪🇸 Sobre el Proyecto
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `bun install`             | Installs dependencies                            |
-| `bun dev`             | Starts local dev server at `localhost:4321`      |
-| `bun build`           | Build your production site to `./dist/`          |
-| `bun preview`         | Preview your build locally, before deploying     |
-| `bun astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `bun astro -- --help` | Get help using the Astro CLI                     |
+Este proyecto es una maqueta de la interfaz de un sitio de e-commerce moderno. **No es una aplicación funcional**; su propósito es servir como una demostración de alta calidad de mis habilidades de UI/UX y desarrollo front-end. El foco fue crear una interfaz *pixel-perfect*, responsiva y extremadamente rápida.
 
-## 👀 Want to learn more?
+#### ✨ Características
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+* **Grid de Productos y Páginas de Detalle:** Diseños limpios y modernos para navegar y ver productos.
+* **Elementos de UI Interactivos:** Interactividad del lado del cliente construida con Svelte para una sensación ágil (ej. carruseles de imágenes, selectores de cantidad).
+* **Diseño 100% Responsivo:** Creado meticulosamente para adaptarse a todos los tamaños de pantalla, desde móvil hasta 4K.
+* **Optimizado para el Rendimiento:** Construido para cargar al instante y funcionar con fluidez.
+
+#### 🛠️ Stack Tecnológico y Filosofía
+
+¿Por qué **Astro + Svelte**? Para demostrar que una interfaz de usuario compleja no tiene por qué ser lenta. Astro se encarga de la generación de sitio estático para cargas instantáneas, mientras que los componentes de Svelte aportan la interactividad. Svelte compila a código imperativo y altamente eficiente que manipula el DOM directamente, evitando la sobrecarga de un DOM Virtual. Esta combinación es perfecta para construir interfaces que se sienten ligeras e instantáneas.
+
+Made with ❤️ by Lizardiz Nexus.
